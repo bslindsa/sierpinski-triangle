@@ -1,3 +1,39 @@
+
+
+// Mark triangle points
+let width = $(window).width();
+let height = $(window).height();
+// Top Triangle point
+$("body").append(
+    $('<div></div>')
+        .css('position', 'absolute')
+        .css('top', '20px')
+        .css('left', width / 2 + 'px')
+        .css('width', '5px')
+        .css('height', '5px')
+        .css('background-color', 'white'));
+// Bottom right triangle point
+$("body").append(
+    $('<div></div>')
+        .css('position', 'absolute')
+        .css('top', height - 40 + 'px')
+        .css('left', (height + (width / 2)) - 40 + 'px')
+        .css('width', '5px')
+        .css('height', '5px')
+        .css('background-color', 'white'));
+// Bottom left triangle point
+$("body").append(
+    $('<div></div>')
+        .css('position', 'absolute')
+        .css('top', height - 40 + 'px')
+        .css('left', (width / 2) - (height - 40) + 'px')
+        .css('width', '5px')
+        .css('height', '5px')
+        .css('background-color', 'white'));
+
+
+
+// Click to choose starting point
 $(document).ready(function () {
     $(document).click(function (ev) {
         mouseX = ev.pageX;
@@ -14,38 +50,6 @@ $(document).ready(function () {
     });
 });
 
-// Mark triangle points
-let width = $(window).width();
-let height = $(window).height();
-
-$("body").append(
-    $('<div></div>')
-        .css('position', 'absolute')
-        .css('top', '5px')
-        .css('left', width / 2 + 'px')
-        .css('width', '5px')
-        .css('height', '5px')
-        .css('background-color', 'white'));
-
-$("body").append(
-    $('<div></div>')
-        .css('position', 'absolute')
-        .css('top', height - 10 + 'px')
-        .css('left', (height + (width / 2)) - 10 + 'px')
-        .css('width', '5px')
-        .css('height', '5px')
-        .css('background-color', 'white'));
-
-$("body").append(
-    $('<div></div>')
-        .css('position', 'absolute')
-        .css('top', height - 10 + 'px')
-        .css('left', (height + (width / 2)) + 100) + 'px')
-    .css('width', '5px')
-    .css('height', '5px')
-    .css('background-color', 'white')
-
-    
 // Pick a random point on the triangle
 const choosePoint = () => {
     return Math.floor(Math.random() * 3)
