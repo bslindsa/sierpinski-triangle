@@ -18,6 +18,7 @@ Wacław Sierpiński was a Polish Mathematician for whom the Sierpinski Triangle 
 
 The user can open the application on a device and click on any point on the page (preferrably within the triangle for the best results). The application will then calculate and render the Sierpinski Triangle Fractal on the page.
 
+https://bslindsa.github.io/sierpinski-triangle/
 ![One click on the page and the triangle fractal will render](./Sierpinski.gif)
 
 
