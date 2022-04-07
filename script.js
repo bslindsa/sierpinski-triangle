@@ -1,14 +1,18 @@
-
+let currentPoint = { x: null, y: null };
+let nextPoint = { x: null, y: null };
 
 // Mark triangle points
-let width = $(window).width();
-let height = $(window).height();
+const width = $(window).width();
+const height = $(window).height();
+const botLeft = { x: (width / 2) + ((height - 40) / 2), y: height - 40 };
+const botRight = { x: ((width / 2)) - ((height - 40) / 2), y: height - 40 };
+const topVert = { x: width / 2, y: 20 };
 // Top Triangle point
 $("body").append(
     $('<div></div>')
         .css('position', 'absolute')
         .css('top', '20px')
-        .css('left', width / 2 + 'px')
+        .css('left', topVert.x + 'px')
         .css('width', '5px')
         .css('height', '5px')
         .css('background-color', 'white'));
@@ -16,8 +20,8 @@ $("body").append(
 $("body").append(
     $('<div></div>')
         .css('position', 'absolute')
-        .css('top', height - 40 + 'px')
-        .css('left', (height + (width / 2)) - 40 + 'px')
+        .css('top', botRight.y + 'px')
+        .css('left', botRight.x + 'px')
         .css('width', '5px')
         .css('height', '5px')
         .css('background-color', 'white'));
@@ -25,12 +29,11 @@ $("body").append(
 $("body").append(
     $('<div></div>')
         .css('position', 'absolute')
-        .css('top', height - 40 + 'px')
-        .css('left', (width / 2) - (height - 40) + 'px')
+        .css('top', botLeft.y + 'px')
+        .css('left', botLeft.x + 'px')
         .css('width', '5px')
         .css('height', '5px')
         .css('background-color', 'white'));
-
 
 
 // Click to choose starting point
@@ -47,12 +50,26 @@ $(document).ready(function () {
                 .css('width', '1px')
                 .css('height', '1px')
                 .css('background-color', 'white'));
+        currentPoint = {
+            x: mouseX,
+            y: mouseY
+        }
     });
+
 });
 
 // Pick a random point on the triangle
-const choosePoint = () => {
-    return Math.floor(Math.random() * 3)
+const chooseVertex = () => {
+    return Math.floor(Math.random() * 3);
 }
 
-console.log(choosePoint());
+
+// Calculate location of next point
+const calcNextPoint = () => {
+    let vertex = chooseVertex();
+    if (vertex = 0) {
+
+    }
+
+
+}
