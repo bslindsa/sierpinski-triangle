@@ -9,6 +9,7 @@ const topVert = { x: width / 2, y: 20 };
 
 let currentPoint = {};
 let nextPoint = {};
+let points = 0;
 
 // Top Triangle point
 $("body").append(
@@ -44,8 +45,6 @@ const calcNextPoint = () => {
     // Pick a random point on the triangle
     let vertex = Math.floor(Math.random() * 3);;
     let point2 = topVert;
-    console.log(vertex);
-    // vertex = {0: topVert, 1: botLeft, 2: botRight}
     if (vertex === 0) {
         point2 = topVert;
     } 
@@ -56,18 +55,9 @@ const calcNextPoint = () => {
         point2 = botRight;
     };
 
-    // console.log(topVert);
-    // console.log(botLeft);
-    // console.log(botRight);
-
-    // console.log(currentPoint);
-    // console.log(point2);
-
     nextPoint.x = Math.abs((currentPoint.x + point2.x)) / 2;
     nextPoint.y = Math.abs((currentPoint.y + point2.y)) / 2;
-    // console.log(nextPoint);
-
-
+    
     $("body").append(
         $('<div></div>')
             .css('position', 'absolute')
@@ -78,23 +68,30 @@ const calcNextPoint = () => {
             .css('background-color', 'white'));
     
     currentPoint = nextPoint;
-}
+    points++;
+    console.log(points);
+    if (points === 10) {
+        clearInterval(init);
+        console.log(stop);
+    }
+};
+
+// const myInterval = setInterval(calcNextPoint(), 10);
 
 const init = () => {
-    let i = 0;
-    while (i < 10000) {
-        calcNextPoint();
-        i++;
-    }
+    setInterval(calcNextPoint, 10);
+}
+
+const stopCount = () => {
+    clearInterval(init);
+    console.log('Stop!')
 }
 
 // Click to choose starting point
-
 $(document).ready(function () {
     $(document).click(function (ev) {
         mouseX = ev.pageX;
         mouseY = ev.pageY
-        console.log(mouseX + ' ' + mouseY);
         $("body").append(
             $('<div></div>')
                 .css('position', 'absolute')
