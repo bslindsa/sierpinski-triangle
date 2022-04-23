@@ -1,7 +1,32 @@
 * {
     background-color: black;
+    color: white;
 }
 
-button {
+#right-div {
+    float: right;
+}
+
+#point-rate {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#speed-input {
     background-color: white;
+    color: black;
+}
+
+#stop-btn {
+    background-color: red;
+    height: 80px;
+    width: 160px;
+    font-size: 60px;
+}
+
+#description {
+    display: inline-block;
+    width: 40%;
+    text-align: justify;
+    font-size: 3.2vh;
 }

@@ -43,7 +43,17 @@ $("body").append(
 // Calculate location of next point
 const calcNextPoint = () => {
     // Pick a random point on the triangle
-    let vertex = Math.floor(Math.random() * 3);;
+    let vertex = Math.floor(Math.random() * 3);
+    let size = Math.floor(Math.random() * 3);
+    let colorNum = Math.floor(Math.random() * 3);
+    let color = 'red';
+    if (colorNum === 0) {
+        color = 'white';
+    } 
+    else if (colorNum === 1) {
+        color = 'blue';
+    }
+    
     let point2 = topVert;
     if (vertex === 0) {
         point2 = topVert;
@@ -63,23 +73,24 @@ const calcNextPoint = () => {
             .css('position', 'absolute')
             .css('top', nextPoint.y + 'px')
             .css('left', nextPoint.x + 'px')
-            .css('width', '1px')
-            .css('height', '1px')
-            .css('background-color', 'white'));
+            .css('width', size + 1 + 'px')
+            .css('height', size + 1 + 'px')
+            .css('background-color', color));
     
     currentPoint = nextPoint;
+
     points++;
-    console.log(points);
+    // console.log(points);
     if (points === 10) {
-        clearInterval(init);
-        console.log(stop);
+        clearInterval(calcNextPoint);
+        console.log("Stop!");
     }
 };
 
 // const myInterval = setInterval(calcNextPoint(), 10);
 
 const init = () => {
-    setInterval(calcNextPoint, 10);
+    setInterval(calcNextPoint, 1);
 }
 
 const stopCount = () => {
