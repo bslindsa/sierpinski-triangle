@@ -40,6 +40,7 @@ $("#triangle-box").append(
         .css('background-color', 'white'));
 
 
+
 // Calculate location of next point
 const calcNextPoint = () => {
     // Pick a random point on the triangle
@@ -66,8 +67,8 @@ const calcNextPoint = () => {
     };
 
     nextPoint.x = Math.abs((currentPoint.x + point2.x)) / 2;
-    nextPoint.y = Math.abs((currentPoint.y + point2.y)) / 2;
-    
+    nextPoint.y = Math.abs((currentPoint.y + point2.y)) / 2; 
+
     $("#triangle-box").append(
         $('<div></div>')
             .css('position', 'absolute')
@@ -80,25 +81,13 @@ const calcNextPoint = () => {
     currentPoint = nextPoint;
 
     points++;
+    $('#points').text(points);
     // console.log(points);
     if (points === 10) {
-        clearInterval(calcNextPoint);
-        console.log("Stop!");
+        // clearInterval(myInterval);
+        console.log("STOP!")
     }
 };
-
-// $('#stop-btn').click(stopCount());
-
-// const myInterval = setInterval(calcNextPoint(), 10);
-
-const init = () => {
-    setInterval(calcNextPoint, 1);
-}
-
-const stopCount = () => {
-    clearInterval(init);
-    console.log('Stop!')
-}
 
 // Click to choose starting point
 $('#triangle-box').ready(function () {
@@ -117,7 +106,15 @@ $('#triangle-box').ready(function () {
             x: mouseX,
             y: mouseY
         }
-        init();
+        
+        const myInterval = setInterval(calcNextPoint, 1);
+
+        const stopCount = () => {
+            clearInterval(myInterval);
+            console.log('Stop!')
+        }
+        
+        $('#stop-btn').click(stopCount);
     });
 
 });

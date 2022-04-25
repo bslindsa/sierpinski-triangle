@@ -18,6 +18,10 @@
     margin-right: auto;
 }
 
+#points-calc {
+    margin: 10px;
+}
+
 #right-div {
     float: right;
 }
