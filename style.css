@@ -3,6 +3,21 @@
     color: white;
 }
 
+/* #main {
+    width: 60%;
+} */
+
+#triangle-box {
+    border: 5px solid white;
+    position: relative;
+    display: inline-block;
+    width: 80%;
+    height: 700px;
+    margin: 10px 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #right-div {
     float: right;
 }
@@ -26,7 +41,8 @@
 
 #description {
     display: inline-block;
-    width: 40%;
+    /* width: 20%; */
     text-align: justify;
     font-size: 3.2vh;
+    margin: 10px;
 }
