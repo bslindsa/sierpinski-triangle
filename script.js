@@ -82,10 +82,9 @@ const calcNextPoint = () => {
 
     points++;
     $('#points').text(points);
-    // console.log(points);
+   
     if (points === 10) {
-        // clearInterval(myInterval);
-        console.log("STOP!")
+        console.log('Stop!')
     }
 };
 
@@ -107,7 +106,9 @@ $('#triangle-box').ready(function () {
             y: mouseY
         }
         
-        const myInterval = setInterval(calcNextPoint, 1);
+        let speed = $('#speed-input').val();
+
+        const myInterval = setInterval(calcNextPoint, speed);
 
         const stopCount = () => {
             clearInterval(myInterval);
