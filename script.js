@@ -70,7 +70,7 @@ const calcNextPoint = () => {
     nextPoint.y = Math.abs((currentPoint.y + point2.y)) / 2; 
 
     $("#triangle-box").append(
-        $('<div></div>')
+        $('<div class="dots"></div>')
             .css('position', 'absolute')
             .css('top', nextPoint.y + 'px')
             .css('left', nextPoint.x + 'px')
@@ -94,12 +94,12 @@ $('#triangle-box').ready(function () {
         mouseX = ev.pageX;
         mouseY = ev.pageY
         $("body").append(
-            $('<div></div>')
+            $('<div id="start-point"></div>')
                 .css('position', 'absolute')
                 .css('top', mouseY + 'px')
                 .css('left', mouseX + 'px')
-                .css('width', '1px')
-                .css('height', '1px')
+                .css('width', '5px')
+                .css('height', '5px')
                 .css('background-color', 'white'));
         currentPoint = {
             x: mouseX,
@@ -117,5 +117,14 @@ $('#triangle-box').ready(function () {
         
         $('#stop-btn').click(stopCount);
     });
-
 });
+
+// Clear dots
+const clearDots = () => {
+    $('.dots').remove();
+    $('#start-point').remove();
+    points = 0;
+    $('#points').text(points);
+}
+
+$('#clear-btn').click(clearDots);
