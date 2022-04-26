@@ -125,9 +125,8 @@ $('#clear-color1').click(() => {
     $('#color1').val('#ffffff');
 })
 $('#clear-color2').click(() => {
-    $('#color2').removeAttr('value');
-    console.log($('#color2').val())
+    $('#color2').val('#000000');
 })
 $('#clear-color3').click(() => {
-    $('#color3').removeAttr('value');
+    $('#color3').val('#000000');
 })
