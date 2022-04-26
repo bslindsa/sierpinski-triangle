@@ -23,14 +23,36 @@
         <h3 id="points-calc"><span id="points">0</span> Points Calculated</h3>
     </div>
 
-    <div id="right-div">
+    <div id="customs">
         <div id="point-rate">
-            <label>Speed</label>
+            <label>Speed<span> (Points per second)</span></label>
             <input id="speed-input" type="number" name="rate" />
         </div>
-        <button id="stop-btn">Stop</button>
-        <button id="clear-btn">Clear</button>
+        <div id="point-max">
+            <label>Point Max</label>
+            <input id="point-max-input" type="number" name="point-max" />
+        </div>
+        <div id="choose-colors">
+            <div>
+                <label class="color-label">Color 1: </label>
+                <input class="colors" id="color1" type="color" name="color1" value="#ffffff"/>
+                <button id="clear-color1">clear</button>
+            </div>
+            <div>
+                <label class="color-label">Color 2: </label>
+                <input class="colors" id="color2" type="color" name="color2" />
+                <button id="clear-color2">clear</button>
+            </div>
+            <div>
+                <label class="color-label">Color 3: </label>
+                <input class="colors" id="color3" type="color" name="color3" />
+                <button id="clear-color3">clear</button>
+            </div>
+        </div>
+
     </div>
+    <button id="stop-btn">Stop</button>
+    <button id="clear-btn">Clear</button>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous">

@@ -11,31 +11,57 @@
     border: 5px solid white;
     position: relative;
     display: inline-block;
-    width: 80%;
+    width: 95%;
     height: 80vh;
     margin: 10px 0px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 #points-calc {
     margin: 10px;
 }
 
-#right-div {
-    float: right;
+#customs {
+display: flex;
+justify-content: space-around;
 }
 
 #point-rate {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 10px;
+    width: 20%;
+}
+
+#point-rate span {
+    font-size: 15px;
+    width: 100%;
 }
 
 #speed-input {
     font-size: 24px;
-    width: 100px;
+    width: 100%;
     background-color: white;
     color: black;
+}
+
+#point-max {
+    font-size: 20px;
+    margin-bottom: 10px;
+    width: 20%;
+}
+
+#point-max-input {
+    font-size: 24px;
+    width: 100%;
+    background-color: white;
+    color: black;
+}
+
+.color-label {
+    width: 100%;
+}
+
+#choose-colors div {
+    width: 100%;
 }
 
 #stop-btn {
