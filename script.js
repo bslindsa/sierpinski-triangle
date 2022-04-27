@@ -99,7 +99,7 @@ $('#triangle-box').click(function (ev) {
             .css('background-color', 'white'));
 
 
-    let speed = $('#speed-input').val();
+    let speed = 1000 / $('#speed-input').val();
     // console.log(speed);
 
     const myInterval = setInterval(calcNextPoint, speed);
